@@ -1,0 +1,121 @@
+{
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "dpr": 2
+  },
+  "shots": {
+    "01-open-component": {
+      "file": "shots/01-open-component.png",
+      "highlights": {
+        "preview": {
+          "x": 894,
+          "y": 33,
+          "width": 541,
+          "height": 834
+        },
+        "status": {
+          "x": 969.0625,
+          "y": 872,
+          "width": 78.7421875,
+          "height": 24
+        }
+      }
+    },
+    "02-switch-card": {
+      "file": "shots/02-switch-card.png",
+      "highlights": {
+        "preview": {
+          "x": 894,
+          "y": 33,
+          "width": 541,
+          "height": 834
+        }
+      }
+    },
+    "03-switch-avatar": {
+      "file": "shots/03-switch-avatar.png",
+      "highlights": {
+        "preview": {
+          "x": 894,
+          "y": 33,
+          "width": 541,
+          "height": 834
+        }
+      }
+    },
+    "04-codelens-before": {
+      "file": "shots/04-codelens-before.png",
+      "highlights": {
+        "lens": {
+          "x": 425,
+          "y": 88,
+          "width": 0,
+          "height": 0
+        },
+        "dangerLens": {
+          "x": 572.53125,
+          "y": 403,
+          "width": 88.453125,
+          "height": 18
+        }
+      }
+    },
+    "05-codelens-after": {
+      "file": "shots/05-codelens-after.png",
+      "highlights": {
+        "lens": {
+          "x": 425,
+          "y": 88,
+          "width": 0,
+          "height": 0
+        },
+        "preview": {
+          "x": 894,
+          "y": 33,
+          "width": 541,
+          "height": 834
+        }
+      }
+    },
+    "06-stories-view": {
+      "file": "shots/06-stories-view.png",
+      "highlights": {
+        "stories": {
+          "x": 49,
+          "y": 714,
+          "width": 298,
+          "height": 148
+        },
+        "preview": {
+          "x": 894,
+          "y": 33,
+          "width": 541,
+          "height": 834
+        }
+      }
+    },
+    "07-live-edit": {
+      "file": "shots/07-live-edit.png",
+      "highlights": {
+        "preview": {
+          "x": 894,
+          "y": 33,
+          "width": 541,
+          "height": 834
+        }
+      }
+    },
+    "08-story-view-sidebar": {
+      "file": "shots/08-story-view-sidebar.png",
+      "highlights": {
+        "sidebar": {
+          "x": 48,
+          "y": 32,
+          "width": 300,
+          "height": 836
+        }
+      }
+    }
+  }
+}

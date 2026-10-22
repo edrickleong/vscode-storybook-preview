@@ -1,0 +1,337 @@
+{
+  "name": "component-story-visualiser",
+  "displayName": "Component Story Visualiser",
+  "description": "See the Storybook story for the component you're editing, right beside your code. It follows you as you switch files.",
+  "version": "0.2.0",
+  "publisher": "edrickleong",
+  "author": {
+    "name": "Edrick Leong"
+  },
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#2A1A7A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edrickleong/vscode-component-story-visualiser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edrickleong/vscode-component-story-visualiser/issues"
+  },
+  "homepage": "https://github.com/edrickleong/vscode-component-story-visualiser#readme",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "keywords": [
+    "storybook",
+    "stories",
+    "component",
+    "preview",
+    "react",
+    "vue",
+    "svelte",
+    "codelens",
+    "integrated browser"
+  ],
+  "activationEvents": [
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact",
+    "onLanguage:vue",
+    "onLanguage:svelte",
+    "workspaceContains:**/.storybook"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "storyVisualiser.showStory",
+        "title": "Show Story",
+        "category": "Story Visualiser",
+        "icon": "$(book)"
+      },
+      {
+        "command": "storyVisualiser.pickStory",
+        "title": "Pick Story\u2026",
+        "category": "Story Visualiser",
+        "icon": "$(list-selection)"
+      },
+      {
+        "command": "storyVisualiser.toggleAutoSync",
+        "title": "Toggle Automatic Story Sync",
+        "category": "Story Visualiser"
+      },
+      {
+        "command": "storyVisualiser.openStoryFile",
+        "title": "Open Story Source",
+        "category": "Story Visualiser",
+        "icon": "$(file-code)"
+      },
+      {
+        "command": "storyVisualiser.openInExternalBrowser",
+        "title": "Open Story in External Browser",
+        "category": "Story Visualiser",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "storyVisualiser.startStorybook",
+        "title": "Start Storybook",
+        "category": "Story Visualiser"
+      },
+      {
+        "command": "storyVisualiser.refreshIndex",
+        "title": "Refresh Story Index",
+        "category": "Story Visualiser"
+      },
+      {
+        "command": "storyVisualiser.showStoryById",
+        "title": "Preview Story",
+        "category": "Story Visualiser",
+        "icon": "$(play)"
+      },
+      {
+        "command": "storyVisualiser.nextStory",
+        "title": "Next Story",
+        "category": "Story Visualiser",
+        "icon": "$(arrow-down)"
+      },
+      {
+        "command": "storyVisualiser.previousStory",
+        "title": "Previous Story",
+        "category": "Story Visualiser",
+        "icon": "$(arrow-up)"
+      },
+      {
+        "command": "storyVisualiser.toggleViewMode",
+        "title": "Toggle Full Storybook UI",
+        "category": "Story Visualiser",
+        "icon": "$(layout-sidebar-left)"
+      },
+      {
+        "command": "storyVisualiser.useStoryView",
+        "title": "Preview Stories in the Story View",
+        "category": "Story Visualiser"
+      },
+      {
+        "command": "storyVisualiser.moveStoryView",
+        "title": "Move Story Preview\u2026",
+        "category": "Story Visualiser",
+        "icon": "$(arrow-swap)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "storyVisualiser.showStory",
+          "when": "storyVisualiser.activeHasStory",
+          "group": "navigation@-10"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "storyVisualiser.showStory",
+          "when": "storyVisualiser.activeHasStory",
+          "group": "navigation@100"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "storyVisualiser.openStoryFile",
+          "when": "storyVisualiser.activeHasStory"
+        },
+        {
+          "command": "storyVisualiser.showStoryById",
+          "when": "false"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "storyVisualiser.previousStory",
+          "when": "view == storyVisualiser.stories && storyVisualiser.activeHasStory",
+          "group": "navigation@1"
+        },
+        {
+          "command": "storyVisualiser.nextStory",
+          "when": "view == storyVisualiser.stories && storyVisualiser.activeHasStory",
+          "group": "navigation@2"
+        },
+        {
+          "command": "storyVisualiser.toggleViewMode",
+          "when": "view == storyVisualiser.stories",
+          "group": "navigation@3"
+        },
+        {
+          "command": "storyVisualiser.refreshIndex",
+          "when": "view == storyVisualiser.stories",
+          "group": "1_more"
+        },
+        {
+          "command": "storyVisualiser.moveStoryView",
+          "when": "view == storyVisualiser.storyView",
+          "group": "navigation@9"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "storyVisualiser.openStoryFile",
+          "when": "view == storyVisualiser.stories && viewItem == story",
+          "group": "inline@1"
+        },
+        {
+          "command": "storyVisualiser.openInExternalBrowser",
+          "when": "view == storyVisualiser.stories && viewItem == story",
+          "group": "inline@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Component Story Visualiser",
+      "properties": {
+        "storyVisualiser.storybookUrl": {
+          "type": "string",
+          "default": "http://localhost:6006",
+          "scope": "resource",
+          "description": "URL of the running Storybook dev server."
+        },
+        "storyVisualiser.autoSync": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically open the matching story beside a component when you open it, and switch the preview as you move between components and stories."
+        },
+        "storyVisualiser.previewTarget": {
+          "type": "string",
+          "default": "auto",
+          "enum": [
+            "auto",
+            "integratedBrowser",
+            "webview",
+            "sidebar",
+            "simpleBrowser",
+            "external"
+          ],
+          "enumDescriptions": [
+            "Use VS Code's integrated browser when available, otherwise the built-in webview panel.",
+            "VS Code's integrated browser (full Chromium tab with DevTools), in the dedicated browser side group.",
+            "A webview editor beside your code, with a story picker toolbar.",
+            "The Story view: its own icon in the Primary Side Bar by default, movable to the Secondary Side Bar or the Panel with \"Move Story Preview\u2026\". Adds no editor groups.",
+            "The Simple Browser.",
+            "Your default system browser (no automatic sync)."
+          ],
+          "description": "Where to display the story."
+        },
+        "storyVisualiser.viewMode": {
+          "type": "string",
+          "default": "canvas",
+          "enum": [
+            "canvas",
+            "storybook"
+          ],
+          "enumDescriptions": [
+            "Only the rendered story (iframe.html) \u2014 best for a side panel.",
+            "The full Storybook UI with sidebar, controls and addons."
+          ],
+          "description": "Show just the story canvas or the full Storybook UI."
+        },
+        "storyVisualiser.componentExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".tsx",
+            ".jsx",
+            ".vue",
+            ".svelte",
+            ".ts",
+            ".js"
+          ],
+          "description": "File extensions treated as potential components."
+        },
+        "storyVisualiser.startCommand": {
+          "type": "string",
+          "default": "",
+          "scope": "resource",
+          "description": "Command used to start Storybook. Leave empty to detect it from package.json (e.g. `npm run storybook`)."
+        },
+        "storyVisualiser.codeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show clickable story CodeLenses above components and story exports."
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "storyVisualiser.stories",
+          "name": "Stories",
+          "icon": "$(book)",
+          "contextualTitle": "Component Stories"
+        }
+      ],
+      "storyVisualiser": [
+        {
+          "type": "webview",
+          "id": "storyVisualiser.storyView",
+          "name": "Preview",
+          "icon": "media/story.svg"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "storyVisualiser.stories",
+        "contents": "Open a component that has a Storybook story to list its stories here.\n[Start Storybook](command:storyVisualiser.startStorybook)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "storyVisualiser.nextStory",
+        "key": "ctrl+alt+]",
+        "mac": "ctrl+alt+]",
+        "when": "storyVisualiser.activeHasStory"
+      },
+      {
+        "command": "storyVisualiser.previousStory",
+        "key": "ctrl+alt+[",
+        "mac": "ctrl+alt+[",
+        "when": "storyVisualiser.activeHasStory"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "storyVisualiser",
+          "title": "Story Visualiser",
+          "icon": "media/story.svg"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "node -e \"require('fs').rmSync('out',{recursive:true,force:true})\" && npm run copy-assets && tsc -p .",
+    "watch": "tsc -watch -p .",
+    "test:unit": "npm run compile && mocha out/test/unit/**/*.test.js",
+    "test:integration": "npm run compile && node out/test/integration/runTest.js",
+    "test:e2e": "npm run compile && node test/e2e/run-e2e.mjs",
+    "test": "npm run test:unit && npm run test:integration",
+    "package": "vsce package --no-dependencies",
+    "copy-assets": "node -e \"const fs=require('fs');fs.mkdirSync('media/codicons',{recursive:true});for(const f of ['codicon.css','codicon.ttf'])fs.copyFileSync('node_modules/@vscode/codicons/dist/'+f,'media/codicons/'+f)\"",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.0.0",
+    "@types/vscode": "^1.100.0",
+    "@vscode/codicons": "^0.0.46-24",
+    "@vscode/test-electron": "^3.1.0",
+    "@vscode/vsce": "^4.0.0",
+    "mocha": "^11.0.0",
+    "typescript": "^5.9.0"
+  }
+}

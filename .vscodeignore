@@ -1,0 +1,13 @@
+sample/**
+test/**
+test-artifacts/**
+out/test/**
+src/**
+.vscode/**
+.vscode-test/**
+**/*.map
+tsconfig.json
+marketing/**
+images/**
+media/logo.svg
+.gitignore

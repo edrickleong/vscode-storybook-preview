@@ -1,0 +1,25 @@
+{
+  "name": "component-story-visualiser-marketing",
+  "private": true,
+  "description": "Remotion project for the extension's icon, README images and demo video.",
+  "scripts": {
+    "capture": "node capture.mjs",
+    "studio": "remotion studio src/index.ts",
+    "icon": "remotion still src/index.ts Icon ../media/icon.png --image-format=png",
+    "hero": "remotion still src/index.ts Hero ../images/hero.png --image-format=png",
+    "video": "remotion render src/index.ts Demo ../images/demo.mp4 --codec=h264 --crf=20",
+    "gif": "remotion render src/index.ts Demo ../images/demo.gif --codec=gif --scale=0.45 --every-nth-frame=3",
+    "build": "npm run capture && npm run icon && npm run hero && npm run video && npm run gif"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.529",
+    "@remotion/google-fonts": "4.0.529",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "4.0.529"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}

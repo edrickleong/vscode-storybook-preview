@@ -1,0 +1,140 @@
+{
+    "v": 5,
+    "entries": {
+        "design-system-badge--info": {
+            "type": "story",
+            "subtype": "story",
+            "id": "design-system-badge--info",
+            "name": "Info",
+            "title": "Design System/Badge",
+            "importPath": "./src/components/Badge/Badge.stories.tsx",
+            "componentPath": "./src/components/Badge/index.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Info"
+        },
+        "design-system-badge--success": {
+            "type": "story",
+            "subtype": "story",
+            "id": "design-system-badge--success",
+            "name": "Success",
+            "title": "Design System/Badge",
+            "importPath": "./src/components/Badge/Badge.stories.tsx",
+            "componentPath": "./src/components/Badge/index.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Success"
+        },
+        "design-system-button--primary": {
+            "type": "story",
+            "subtype": "story",
+            "id": "design-system-button--primary",
+            "name": "Primary",
+            "title": "Design System/Button",
+            "importPath": "./src/components/Button/Button.stories.tsx",
+            "componentPath": "./src/components/Button/Button.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Primary"
+        },
+        "design-system-button--secondary": {
+            "type": "story",
+            "subtype": "story",
+            "id": "design-system-button--secondary",
+            "name": "Secondary",
+            "title": "Design System/Button",
+            "importPath": "./src/components/Button/Button.stories.tsx",
+            "componentPath": "./src/components/Button/Button.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Secondary"
+        },
+        "design-system-button--danger-large": {
+            "type": "story",
+            "subtype": "story",
+            "id": "design-system-button--danger-large",
+            "name": "Danger Large",
+            "title": "Design System/Button",
+            "importPath": "./src/components/Button/Button.stories.tsx",
+            "componentPath": "./src/components/Button/Button.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "DangerLarge"
+        },
+        "components-card--default": {
+            "type": "story",
+            "subtype": "story",
+            "id": "components-card--default",
+            "name": "Default",
+            "title": "components/Card",
+            "importPath": "./src/components/Card/Card.stories.tsx",
+            "componentPath": "./src/components/Card/Card.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Default"
+        },
+        "components-card--long-content": {
+            "type": "story",
+            "subtype": "story",
+            "id": "components-card--long-content",
+            "name": "With long content",
+            "title": "components/Card",
+            "importPath": "./src/components/Card/Card.stories.tsx",
+            "componentPath": "./src/components/Card/Card.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "LongContent"
+        },
+        "people-avatar--small": {
+            "type": "story",
+            "subtype": "story",
+            "id": "people-avatar--small",
+            "name": "Small",
+            "title": "People/Avatar",
+            "importPath": "./src/stories/UserAvatar.stories.tsx",
+            "componentPath": "./src/components/Avatar/Avatar.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Small"
+        },
+        "people-avatar--large": {
+            "type": "story",
+            "subtype": "story",
+            "id": "people-avatar--large",
+            "name": "Large",
+            "title": "People/Avatar",
+            "importPath": "./src/stories/UserAvatar.stories.tsx",
+            "componentPath": "./src/components/Avatar/Avatar.tsx",
+            "tags": [
+                "dev",
+                "test",
+                "manifest"
+            ],
+            "exportName": "Large"
+        }
+    }
+}

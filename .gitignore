@@ -1,0 +1,9 @@
+node_modules/
+out/
+.vscode-test/
+*.vsix
+sample/storybook-static/
+test-artifacts/
+media/codicons/
+marketing/node_modules/
+marketing/out/
